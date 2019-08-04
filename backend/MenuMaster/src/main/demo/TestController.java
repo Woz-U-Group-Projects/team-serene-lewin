@@ -1,4 +1,4 @@
-package com.menumaster.controllers;
+package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,20 +9,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.menumaster.models.Dessert;
-import com.menumaster.models.Entree;
-import com.menumaster.repositories.MenuRepository;
-
+import com.example.demo.models.Entree;
 
 @RestController
 
 public class TestController {
 	
-	private static final ResponseEntity<Entree> entree = null;
+	private static final ResponseEntity<Menu> entree = null;
 	@Autowired
 	MenuRepository menuRepository;
 	
-	@GetMapping("/")
+	@GetMapping("/test")
 	public String index() {
 		
 		return "YAY";
@@ -30,11 +27,8 @@ public class TestController {
 	
 	@GetMapping("/entree")
 	public String getEntrees(Model model) {
-		List <Dessert> dessert =new ArrayList<Dessert>();
+		List <Entree> entree =new ArrayList<Entree>();
 		
-<<<<<<< HEAD:backend/MenuMaster/src/main/java/com/menumaster/controllers/TestController.java
-		model.addAttribute("entree", dessert);
-=======
 		 Connection con;
 	        try {
 	            con = DriverManager.getConnection("jdbc:mogodb:./test.db", "", "");
@@ -49,7 +43,6 @@ public class TestController {
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	            }
->>>>>>> 6a0318fd8c9e1e4c711a4b89c0bd8ab2fe1baec2:backend/demo/src/main/java/com/example/demo/TestController.java
 		
 		model.addAttribute("entree", entree);
 				 
