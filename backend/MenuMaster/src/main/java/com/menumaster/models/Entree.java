@@ -1,7 +1,11 @@
-package com.example.demo.models;
+package com.menumaster.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="entree")
 public class Entree {
-	
+ 	@Id
 	private int itemId;
 	private String itemName;
 	private String itemDesc;
@@ -31,5 +35,4 @@ public class Entree {
 	public void setItemPrice(int itemPrice) {
 		this.itemPrice = itemPrice;
 	}
-
 }

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.menumaster.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,17 +9,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.models.Entree;
+import com.menumaster.models.Dessert;
+import com.menumaster.models.Entree;
+import com.menumaster.repositories.MenuRepository;
+
 
 @RestController
 
 public class TestController {
 	
-	private static final ResponseEntity<Menu> entree = null;
+	private static final ResponseEntity<Entree> entree = null;
 	@Autowired
 	MenuRepository menuRepository;
 	
-	@GetMapping("/test")
+	@GetMapping("/")
 	public String index() {
 		
 		return "YAY";
@@ -27,9 +30,9 @@ public class TestController {
 	
 	@GetMapping("/entree")
 	public String getEntrees(Model model) {
-		List <Entree> entree =new ArrayList<Entree>();
+		List <Dessert> dessert =new ArrayList<Dessert>();
 		
-		model.addAttribute("entree", entree);
+		model.addAttribute("entree", dessert);
 		
 		return "entree";
 		
