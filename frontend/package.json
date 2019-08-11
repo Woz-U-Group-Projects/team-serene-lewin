@@ -1,0 +1,9 @@
+{
+    "name": "Tally Tales",
+    "version": "1.0.0",
+    "description": "Group Project",
+    "main": "index.js",
+    "scripts": {
+      "start": "tsc && node index.js"
+    }
+  }
