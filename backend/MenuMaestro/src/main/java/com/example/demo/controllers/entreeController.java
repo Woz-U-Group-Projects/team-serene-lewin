@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.Entree;
 
+
 @RestController
 
 public class entreeController {
 
 	private static final ResponseEntity<Menu> entree = null;
-	@Autowired
-	MenuRepository menuRepository;
+	
+	private EntreeRepository entreeRepository;
+
+    public EntreeController(EntreeRepository entreeRepository) {
+        this.entreeRepository = entreeRepository;
+    }
 	
 	@GetMapping("/entree")
 	public String getEntrees(Model model) {
@@ -57,4 +62,4 @@ public class entreeController {
         }
         return ResponseEntity.ok().build();
     }
-	
+}
