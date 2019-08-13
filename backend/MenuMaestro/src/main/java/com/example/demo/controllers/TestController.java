@@ -30,7 +30,7 @@ public class TestController {
 	
 	@GetMapping("/entree")
 	public String getEntrees(Model model) {
-		List <Dessert> dessert =new ArrayList<Dessert>();
+		List <Entree> entree =new ArrayList<Entree>();
 		
 		
 		model.addAttribute("entree", entree);
