@@ -17,7 +17,7 @@ import com.example.demo.repositories.EntreeRepository;
 
 public class TestController {
 	
-	private static final ResponseEntity<Entree> entree = null;
+	//private static final ResponseEntity<Entree> entree = null;
 	@Autowired
 	EntreeRepository menuRepository;
 	
@@ -27,7 +27,7 @@ public class TestController {
 		return "YAY";
 	}
 	
-	@GetMapping("/entree")
+	@GetMapping("/alleEntrees")
 	public String getEntrees(Model model) {
 		List <Entree> entree =new ArrayList<Entree>();
 		
